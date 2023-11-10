@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form 1 Assignment 1.5</title>
+    <style>
+       .t1,.t1 td{
+          border: 2px solid black;
+          border-collapse: collapse;
+        }
+        .t2,.t2 td{
+            border: 0px ;
+        }
+
+      </style>
+</head>
+<body>
+    <form method="post" action="new.html">
+        <table class="t1"style="background-color: rgb(249, 176, 176); margin-top: 3px; margin-bottom: 3px;align-items: start; width: 50%;"border="2px ">
+            <tr >
+                <td width="50%"><label for="Name">Name</label></td>
+                <td><input type="text" name="Name"></td>
+            </tr>
+            <tr >
+                <td width="50%"><label for="Ecode">Employee Code</label></td>
+                <td><input type="text" name="Ecode" size="4"></td>
+            </tr>
+            <tr>
+                <td><label for="Dept">Department</label></td>
+                <td style="font-size: 16px;">
+                    <input type="radio" name="Dept"><label name="Admin" for="Dept">ADMIN</label><br>
+                    <input type="radio" name="Dept"><label name="Hr" for="Dept">HR</label><br>
+                    <input type="radio" name="Dept"><label name="Tech" for="Dept">TECHNICAL</label><br>
+                    <input type="radio" name="Dept"><label name="Acct" for="Dept">ACCOUNTS</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="date">Date of Joining</label></td>
+                <td>
+                    <table class ="t2">
+                        <tr>
+                        <td><input type="number" max="31"min="1" size="2"></td>
+                        <td><b><span style="font-size: 20px;">/</span></b></td>
+                        <td><input type="number" max="12"min="1" size="2"></td>
+                        <td><b><span style="font-size: 20px;">/</span></b></td>
+                        <td><input type="number" max="2023"min="1970" size="4"></td>
+                        </tr>
+                        <tr style="font-size: 16px;">
+                            <td colspan="2">dd</td>
+                            <td colspan="2">mm</td>
+                            <td>yyyy</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="address">Address</label></td>
+                <td><textarea cols="50" rows="5" style="overflow-y: scroll;" name="address"></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="progsattended">Training programs Attended</label></td>
+                <td>
+                    <input type="checkbox" name="progsattended"><label name="html" for="trainprogs">HTML/DHTML</label><br>
+                    <input type="checkbox" name="progsattended"><label name="java" for="trainprogs">JAVA</label><br>
+                    <input type="checkbox" name="progsattended"><label name="clientserver" for="trainprogs">CLIENT/SERVER</label><br>
+                    <input type="checkbox" name="progsattended"><label name=".net" for="trainprogs">.NET</label>
+                </td>
+
+            </tr>
+            <tr>
+                <td ><label for="trainprogs">Training programs need</label></td>
+                <td>
+                    <select name="trainprogs" size="2">
+                        <option value="js">JAVASCRIPT</option>
+                        <option value="react">REACT</option>
+                        <option value="redux">REDUX</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Send the information at</td>
+                <td><a href="praveenk012340@gmail.com">praveenk012340@gmail.com</a></td>
+            </tr>
+        </table>
+
+    </form>
+</body>
+</html>
