@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function operators(num1,num2,operator){
+            if(operator== "+"){
+                return num1+num2;
+            }
+            else if(operator=="-"){
+                return num1-num2;
+            }
+            else if(operator=="*"){
+                return num1*num2;
+            }
+            else if(operator=="/"){
+                return num1/num2;
+            }
+            else{
+                console.log("Invalid Operator....!");
+            }
+        }
+        var num1=parseInt(prompt("Enter a Num 1 : "));
+            var num2=parseInt(prompt("Enter a Num 2 : "));
+            var op=prompt("Enter the operator : ");
+            var result =operators(num1,num2,op);
+            console.log("The result is : "+result);
+
+
+
+
+    </script>
+</head>
+<body>
+    <!---Write a function that accepts two numbers and a operator like (+,-,*, /) from user and performs the
+appropriate operation indicated by the operator.-->
+</body>
+</html>

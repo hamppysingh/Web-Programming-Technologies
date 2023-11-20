@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LargestNo</title>
+    <script>
+        function largest(a, b, c) {
+  if (a >= b && a >= c) {
+    largest = a;
+  } else if (b >= a && b >= c) {
+    largest = b;
+  } else {
+    largest = c;
+  }
+  return largest;
+}
+
+let a = parseInt(prompt("Enter the 1st no : "));
+let b = parseInt(prompt("Enter the 2nd no : "));
+let c = parseInt(prompt("Enter the 3rd no : "));
+let result = largest(a, b, c);
+console.log("The largest number is", result);
+
+    </script>
+</head>
+<body>
+    <!---1. Write a program to accept three positive numbers and output the largest of them.--->
+    
+</body>
+</html>
