@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Details</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // Employee objects
+      var employees = [
+        { empid: 1, empname: "Ramesh", salary: 50000 },
+        { empid: 2, empname: "Suresh", salary: 60000 },
+        { empid: 3, empname: "Ameya", salary: 55000 },
+        { empid: 4, empname: "Rahul", salary: 70000 },
+      ];
+
+      // Function to display employee details in a table
+      function displayEmployeeDetails() {
+        // Create a table element
+        var table = document.createElement("table");
+
+        // Create table header
+        var headerRow = table.insertRow();
+        for (var key in employees[0]) {
+          var headerCell = headerRow.insertCell();
+          headerCell.textContent = key.toUpperCase();
+        }
+
+        // Create table rows with employee details
+        employees.forEach(function (employee) {
+          var row = table.insertRow();
+          for (var key in employee) {
+            var cell = row.insertCell();
+            cell.textContent = employee[key];
+          }
+        });
+
+        // Append the table to the body of the HTML document
+        document.body.appendChild(table);
+      }
+
+      // Call the function to display employee details
+      displayEmployeeDetails();
+    </script>
+  </body>
+</html>

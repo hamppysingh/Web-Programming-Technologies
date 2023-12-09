@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power</title>
+    <script>
+        function power(){
+            let b = parseInt(document.getElementById("base").value);
+            let p = parseInt(document.getElementById("power").value);
+            let a=1;
+            for(let i=1;i<=p;i++){
+                a = b*a;
+            }
+            document.getElementById("myp").innerHTML=a;
+        }
+    </script>
+</head>
+<body>
+    Base: <input type="text" name="base" id="base"/>
+    Power: <input type="text" name="power" id="power"/>
+    <button type="button" name="btn" value="btn" id="btn" onclick="power()">Generate</button>
+    <p>Answer: </p>
+    <p id="myp"></p>
+</body>
+</html>

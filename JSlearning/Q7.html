@@ -1,0 +1,25 @@
+<!-- Write a program that takes any number of arguments and return s minimum number  in the set of arguments -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimum Number</title>
+    <script>
+        function min(){
+            let orgStr = document.getElementById("num").value;
+            // console.log(orgStr);
+            let arr = orgStr.split('');
+            // console.log(arr);
+            let smallest = arr.sort((a,b) => a-b);  
+            document.getElementById("myp").innerHTML=smallest[0];
+        }
+    </script>
+</head>
+<body>
+    Number: <input type="text" name="num" id="num">
+    <button type="button" name="btn" value="btn" id="btn" onclick="min()">Find smallest</button>
+    <p>Smallest no.: </p>
+    <p id="myp"></p>
+</body>
+</html>

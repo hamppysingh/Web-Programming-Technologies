@@ -6,7 +6,7 @@ fs.stat("test.txt",function(err,status){
   }else{
      console.log(status);
      console.log("isFile : "+status.isFile());
-     console.log("isFile : "+status.isDirectory());
+     console.log("isDirectory : "+status.isDirectory());
      console.log("size:"+status.size)
   }
 })

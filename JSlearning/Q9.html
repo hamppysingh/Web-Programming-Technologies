@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound Interest</title>
+    <script>
+        function compound(){
+            let p = parseInt(document.getElementById("prin").value);
+            let r = parseInt(document.getElementById("rate").value);
+            let t = parseInt(document.getElementById("period").value);
+            let ans = (p*Math.pow(1+(r/100),t))-p;
+            document.getElementById("myp").innerHTML = ans;
+        }
+    </script>
+</head>
+<body>
+    <p>---------------------------------------------------------</p>
+    <h2>Calculate Compound Interest</h2>
+    <p>---------------------------------------------------------</p>
+    Principle: <input type="text" name="principle" id="prin">
+    Rate of Interest: <input type="text" name="rate" id="rate">
+    Period: <input type="text" name="period" id="period">
+    <button type="button" name="btn" id="btn" onclick="compound()">Calculate</button>
+    Compound Interest: 
+    <p id="myp"></p>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appointments</title>
+  </head>
+  <body>
+    <h1>Appointment Scheduler</h1>
+    <form>
+      <fieldset>
+        <legend>Personal Information</legend>
+        Name
+        <br /><input
+          type="text"
+          name="name"
+          id="name"
+          style="margin-bottom: 10px"
+        /><br />
+        Telephone number
+        <br /><input
+          type="text"
+          name="name"
+          id="name"
+          style="margin-bottom: 10px"
+        /><br />
+        E-mail address
+        <br /><input
+          type="text"
+          name="name"
+          id="name"
+          style="margin-bottom: 10px"
+        /><br />
+        Date of Birth
+        <br /><select name="dob" id="dob" type="date" style="width: 80px">
+          <option size="5"></option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend>Appointment Request</legend>
+        What is the reason for your visit?
+        <br /><input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Select or type your reason"
+          style="margin-bottom: 10px"
+        /><br />
+        <label for="temp">Current pain level:</label><br />
+        <input type="range" id="temp" name="temp" list="markers" />
+        <datalist id="markers">
+          <option value="0"></option>
+          <option value="25"></option>
+          <option value="50"></option>
+          <option value="75"></option>
+          <option value="100"></option></datalist
+        ><br /><br />
+        Preferred date:
+        <br /><select name="dob" id="dob" type="date" style="width: 80px">
+          <option size="5"></option>
+        </select>
+        <br>
+        Preferred time:
+      </fieldset>
+    </form>
+  </body>
+</html>

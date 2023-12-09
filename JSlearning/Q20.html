@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Member Names</title>
+    <script>
+        function displayMemberNames() {
+            const memberNames = ['John', 'Jane', 'Alice', 'Bob'];
+
+            const formattedString = memberNames.map(name => name.toUpperCase()).join(', ');
+
+            document.getElementById('output').textContent = formattedString;
+        }
+    </script>
+</head>
+<body>
+    <button type="button" onclick="displayMemberNames()">Display Member Names</button>
+
+    <div id="output"></div>
+</body>
+</html>

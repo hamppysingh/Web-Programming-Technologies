@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Populate List with Member Names</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const personNames = ['John', 'Jane', 'Alice', 'Bob', 'Charlie'];
+
+            const listElement = document.getElementById('list');
+
+            personNames.forEach(function(name) {
+                const listItem = document.createElement('li');
+                listItem.textContent = name;
+                listElement.appendChild(listItem);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h3>Members of my group are</h3>
+    <ol id="list"></ol>
+</body>
+</html>

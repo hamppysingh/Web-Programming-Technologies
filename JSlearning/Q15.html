@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reverse and Sort Words</title>
+    <script>
+        let arr = [];
+      function revandsort() {
+        for (let i = 0; i < 5; i++) {
+            arr[i]=prompt("Enter the word: ");
+        }
+        // 'apple', 'banana', 'orange', 'grape', 'kiwi'
+
+        for(let k=0;k<5;k++){
+            document.getElementById("namepara").innerHTML += arr[k] + " ";
+        }
+
+        let resultArray = reverseAndSortWords(arr);
+
+        for(let j = 0;j<5;j++){
+            document.getElementById("namepara").innerHTML += resultArray[j] + " ";
+        }
+      }
+
+      function reverseAndSortWords(wordsArray) {
+        let reversedWords = wordsArray.map(function (word) {
+          return word.split("").reverse().join("");
+        });
+
+        let sortedWords = reversedWords.sort();
+
+        return sortedWords;
+      }
+    </script>
+  </head>
+  <body>
+    <button type="button" onclick="revandsort()">Reverse and Sort</button>
+    <p id="namepara"></p>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!-- sum of digits of given 5 digit number -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sum of digits</title>
+    <script>
+      function sum() {
+        let no = document.getElementById("num").value;
+        if (no.length === 5) {
+            let no1 = parseInt(document.getElementById("num").value);
+          let s = 0;
+          while (no1 != 0) {
+            let r = no1 % 10;
+            s += r;
+            no1 = Math.floor(no1 / 10);
+          }
+        //   document.write(s);
+        document.getElementById("myp").innerHTML=s;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    Number: <input type="text" name="num" id="num" />
+    <button type="btn" name="btn" id="btn" onclick="sum()">Generate</button>
+    <p id="myp"></p>
+  </body>
+</html>

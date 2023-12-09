@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome Page</title>
+  </head>
+  <body>
+    <script>
+      // Function to get a formatted date string
+      function getFormattedDate() {
+        var today = new Date();
+        var daysOfWeek = [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ];
+        var months = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+
+        var dayOfWeek = daysOfWeek[today.getDay()];
+        var dayOfMonth = today.getDate();
+        var month = months[today.getMonth()];
+        var year = today.getFullYear();
+
+        return dayOfWeek + ", " + dayOfMonth + " " + month + " " + year;
+      }
+
+      // Function to get a suitable greeting based on the time of day
+      function getGreeting() {
+        var today = new Date();
+        var hours = today.getHours();
+
+        if (hours >= 5 && hours < 12) {
+          return "Good Morning";
+        } else if (hours >= 12 && hours < 17) {
+          return "Good Afternoon";
+        } else {
+          return "Good Evening";
+        }
+      }
+
+      // Function to calculate the number of days left until the end of the year
+      function getDaysLeft() {
+        var today = new Date();
+        var endOfYear = new Date(today.getFullYear(), 11, 31);
+        var oneDay = 24 * 60 * 60 * 1000; // hours * minutes * seconds * milliseconds
+
+        var daysLeft = Math.round((endOfYear - today) / oneDay);
+        return daysLeft;
+      }
+
+      // Function to display the welcome message
+      function displayWelcomeMessage() {
+        var formattedDate = getFormattedDate();
+        var greeting = getGreeting();
+        var daysLeft = getDaysLeft();
+
+        var welcomeMessage =
+          "Today is " +
+          formattedDate +
+          ", Welcome, and " +
+          greeting +
+          " to You. Number of days left till the end of the year: " +
+          daysLeft;
+
+        alert(welcomeMessage);
+      }
+
+      // Call the function to display the welcome message
+      displayWelcomeMessage();
+    </script>
+  </body>
+</html>

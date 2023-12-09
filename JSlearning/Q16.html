@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website Search</title>
+    <script>
+      let websites = [
+        "www.google.com",
+        "www.msn.com",
+        "www.amazon.co.in",
+        "in.answers.yahoo.com",
+        "en.m.wikipedia.com",
+        "codehs.gitbooks.io",
+        "www.coderanch.com",
+      ];
+
+      function search() {
+        document.getElementById("namepara").innerHTML =
+          "Original Websites Array: ";
+        for (let i = 0; i < 7; i++) {
+          document.getElementById("namepara").innerHTML += websites[i];
+        }
+
+        let wwwSitesArray = searchWWWWebsites(websites);
+        for (let i = 0; i < 7; i++) {
+          document.getElementById("namepara").innerHTML +=
+            wwwSitesArray[i] + " ";
+        }
+        document.getElementById("namepara").innerHTML =
+        `Total number of www sites: ${wwwSitesArray.length}`;
+      }
+
+      function searchWWWWebsites(websitesArray) {
+        let wwwSites = websitesArray.filter(function (site) {
+          return site.startsWith("www");
+        });
+
+        return wwwSites;
+      }
+
+      
+    </script>
+  </head>
+  <body>
+    <button type="button" onclick="search()">Search</button><br />
+    <p id="namepara"></p>
+    <br />
+  </body>
+</html>

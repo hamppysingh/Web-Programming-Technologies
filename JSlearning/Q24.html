@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details Form</title>
+</head>
+<body>
+
+    <h1>User Details Form</h1>
+
+    <form id="userForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" pattern="[A-Za-z]+" maxlength="10" required>
+
+        <br>
+
+        <label for="luckyNumber">Lucky Number:</label>
+        <input type="number" id="luckyNumber" name="luckyNumber" pattern="[0-9]{4}" required>
+
+        <br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <br>
+
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" required>
+
+        <br>
+
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+
+    <h2>User Details</h2>
+    <div id="userDetails"></div>
+
+    <button onclick="showDetails()">Show Details</button>
+
+    <script>
+        let userDetailsObject = {};
+
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const luckyNumber = document.getElementById('luckyNumber').value;
+            const email = document.getElementById('email').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+
+            userDetailsObject = {
+                Name: name,
+                'Lucky Number': luckyNumber,
+                Email: email,
+                'Phone Number': phoneNumber
+            };
+
+            displayDetails();
+        }
+
+        function displayDetails() {
+            const userDetailsDiv = document.getElementById('userDetails');
+            userDetailsDiv.innerHTML = '<h3>User Details:</h3>';
+            
+            for (const [key, value] of Object.entries(userDetailsObject)) {
+                userDetailsDiv.innerHTML += `<p>${key}: ${value}</p>`;
+            }
+        }
+
+        function showDetails() {
+            const detailsWindow = window.open('', 'User Details', 'width=400,height=300');
+            detailsWindow.document.write('<h2>User Details</h2>');
+
+            for (const [key, value] of Object.entries(userDetailsObject)) {
+                detailsWindow.document.write(`<p>${key}: ${value}</p>`);
+            }
+        }
+    </script>
+
+</body>
+</html>

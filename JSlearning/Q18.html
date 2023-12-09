@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function query(){
+            const firstStr = document.getElementById("firstStr").value;
+            const secondStr = document.getElementById("secondStr").value;
+            const replaceStr = document.getElementById("replaceStr").value;
+
+            const selectedOption = document.querySelector('input[name="operation"]:checked').value;
+            // console.log(selectedOption);
+            let result;
+            switch (selectedOption) {
+                case 'search':
+                    result = firstStr.includes(secondStr) ? "Sub string found" : "Sub string not found";
+                    break;
+                case 'upper':
+                    result = firstStr.toUpperCase();
+                    break;
+                case 'lower':
+                    result = firstStr.toLowerCase();
+                    break;
+                case 'trim':
+                    result = firstStr.trim();
+                    break;
+                case 'concat':
+                    result = firstStr.concat(secondStr);
+                    break;
+                case 'replace':
+                    firstStr.replace(secondStr)
+                    break;
+                default:
+                    break;
+            }
+
+            document.getElementById("myp").textContent = result;
+
+        }
+    </script>
+</head>
+<body>
+    <form>
+        Enter String: <input type="text" name="text" id="firstStr"/><br>
+        <br>
+        Enter Sub String: <input type="text" name="text" id="secondStr"/><br>
+        <br>
+        Replace with String: <input type="text" name="text" id="replaceStr"/><br>
+        <br>
+        <input type="radio" name="operation" value="search">Search substring in main string
+        <input type="radio" name="operation" value="upper">To Upper Case
+        <input type="radio" name="operation" value="lower">To Lower Case
+        <input type="radio" name="operation" value="trim">Trim spaces
+        <input type="radio" name="operation" value="concat">Concatenate
+        <input type="radio" name="operation" value="replace">Replace
+        <br>
+        <br>
+        <button type="button" onclick="query()">Submit Query</button>
+        <p id="myp"></p>
+    </form>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details Form</title>
+</head>
+<body>
+
+    <h1>Employee Details Form</h1>
+
+    <form id="employeeForm">
+        <label for="employeeName">Employee Name:</label>
+        <input type="text" id="employeeName" name="employeeName" pattern="[A-Za-z]+" maxlength="10" required>
+
+        <br>
+
+        <label for="employeeCode">Employee Code:</label>
+        <input type="text" id="employeeCode" name="employeeCode" pattern="[0-9]{4}" required>
+
+        <br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <br>
+
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" required>
+
+        <br>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <br>
+
+        <button type="button" onclick="submitForm()">Submit</button>
+        <button type="button" onclick="showDetails()">Show Details</button>
+    </form>
+
+    <h2>Employee Details</h2>
+    <div id="employeeDetails"></div>
+
+    <button onclick="sendMail()">Send Mail</button>
+
+    <script>
+        let employeeDetailsObject = {};
+
+        function submitForm() {
+            const employeeName = document.getElementById('employeeName').value;
+            const employeeCode = document.getElementById('employeeCode').value;
+            const email = document.getElementById('email').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const date = document.getElementById('date').value;
+
+            if (!validateDate(date)) {
+                alert('Invalid date format. Please use the correct date format.');
+                return;
+            }
+
+            employeeDetailsObject = {
+                'Employee Name': employeeName,
+                'Employee Code': employeeCode,
+                Email: email,
+                'Phone Number': phoneNumber,
+                Date: date
+            };
+
+            displayDetails();
+        }
+
+        function validateDate(date) {
+            const regexDate = /^\d{4}-\d{2}-\d{2}$/;
+            return regexDate.test(date);
+        }
+
+        function displayDetails() {
+            const employeeDetailsDiv = document.getElementById('employeeDetails');
+            employeeDetailsDiv.innerHTML = '<h3>Employee Details:</h3>';
+
+            for (const [key, value] of Object.entries(employeeDetailsObject)) {
+                employeeDetailsDiv.innerHTML += `<p>${key}: ${value}</p>`;
+            }
+        }
+
+        function showDetails() {
+            const detailsWindow = window.open('', 'Employee Details', 'width=400,height=300');
+            detailsWindow.document.write('<h2>Employee Details</h2>');
+
+            for (const [key, value] of Object.entries(employeeDetailsObject)) {
+                detailsWindow.document.write(`<p>${key}: ${value}</p>`);
+            }
+        }
+
+        function sendMail() {
+            const mailtoLink = `mailto:manager@example.com?Subject=Employee%20Details&Body=${formatDetailsForMail()}`;
+            window.location.href = mailtoLink;
+        }
+
+        function formatDetailsForMail() {
+            let formattedDetails = '';
+            for (const [key, value] of Object.entries(employeeDetailsObject)) {
+                formattedDetails += `${key}: ${value}%0D%0A`;
+            }
+            return formattedDetails;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!-- Multiplication  table -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mult. Table</title>
+    <script>
+        function table(){
+            let num = document.getElementById("no").value;
+            let p = document.getElementById("myp");
+            for(let i=1;i<=10;i++){
+                p.innerHTML += num+" * "+i+" = "+num*i+"<br>";
+            }
+        }
+    </script>
+</head>
+<body>
+    Number: <input type="text" name="num" id="no"/><br>
+    <button type="btn" name="btn" id="btn" onclick="table()">Generate</button>
+    <p id="myp"></p>
+</body>
+</html>

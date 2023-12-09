@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of Digits</title>
+    <script>
+        function calculateSum() {
+  
+            const userInput = document.getElementById('userInput').value;
+
+            if (Number.isInteger(+userInput) && +userInput > 0 && +userInput < 1000) {
+
+                const digitArray = userInput.split('').map(Number);
+                const sum = digitArray.reduce((acc, digit) => acc + digit, 0);
+
+                document.getElementById('output').textContent = `Sum of the digits of ${userInput} is ${sum}`;
+            } else {
+                document.getElementById('output').textContent = 'Entered number is out of range';
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <label>Enter a positive number less than 1000:</label>
+        <input type="text" id="userInput" required>
+        <br>
+        
+        <button type="button" onclick="calculateSum()">Submit</button>
+    </form>
+
+    <div id="output"></div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Divs for "Training"</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const allDivs = document.querySelectorAll('div');
+
+            allDivs.forEach(function(div) {
+                if (div.textContent.includes('training')) {
+                    div.classList.add('highlighted');
+                }
+            });
+        });
+    </script>
+
+    <style>
+        /* Add styles for highlighting if needed */
+        .highlighted {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div>This div does not contain the word "training."</div>
+    <div>Searching for the div with a particular string.</div>
+    <div>Another div containing the word "training." Highlighted!</div>
+</body>
+</html>
